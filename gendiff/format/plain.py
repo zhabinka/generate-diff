@@ -2,12 +2,19 @@ from gendiff import tree
 
 
 def to_str(value):
-    if isinstance(value, dict):
+    if isinstance(value, bool):
+        return 'true' if value else 'false'
+
+    if value is None:
+        return 'null'
+
+    if isinstance(value, dict) or isinstance(value, list):
         return "[complex value]"
+
     elif isinstance(value, str):
         return f"'{value}'"
-    else:
-        return value
+
+    return value
 
 
 def get_full_path(acc, key):
