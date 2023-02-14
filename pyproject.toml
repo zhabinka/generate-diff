@@ -1,11 +1,10 @@
 [tool.poetry]
-name = "hexlet_gendiff"
-version = "0.2.0"
-description = "JSON diffing tool"
-authors = ["Hexlet team <team@hexlet.io>"]
+name = "hexlet-code"
+version = "1.0.0"
+description = "diff tool"
+authors = []
 license = "MIT"
 readme = "README.md"
-homepage = "https://hexlet.io"
 packages = [
   { include = "gendiff" },
 ]
