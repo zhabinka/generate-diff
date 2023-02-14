@@ -14,7 +14,7 @@ def get_data(file_path):
     return parse(open(file_path), get_format(file_path))
 
 
-def generate_diff(file_path1, file_path2, formatter=format.STYLISH):
+def generate_diff(file_path1, file_path2, formatter=format.stylish):
     data1 = get_data(file_path1)
     data2 = get_data(file_path2)
 
