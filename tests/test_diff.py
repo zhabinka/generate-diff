@@ -27,27 +27,27 @@ FILE4 = get_path('file2.yml')
 
 test_cases_diff = [
     (
-        generate_diff(FILE1, FILE2, format.stylish),
+        generate_diff(FILE1, FILE2, format.STYLISH),
         get_file_data('result_stylish')
     ),
     (
-        generate_diff(FILE1, FILE2, format.plain),
+        generate_diff(FILE1, FILE2, format.PLAIN),
         get_file_data('result_plain')
     ),
     (
-        json.loads(generate_diff(FILE1, FILE2, format.json)),
+        json.loads(generate_diff(FILE1, FILE2, format.JSON)),
         json.loads(get_file_data('result.json'))
     ),
     (
-        generate_diff(FILE3, FILE4, format.stylish),
+        generate_diff(FILE3, FILE4, format.STYLISH),
         get_file_data('result_stylish')
     ),
     (
-        generate_diff(FILE3, FILE4, format.plain),
+        generate_diff(FILE3, FILE4, format.PLAIN),
         get_file_data('result_plain')
     ),
     (
-        json.loads(generate_diff(FILE3, FILE4, format.json)),
+        json.loads(generate_diff(FILE3, FILE4, format.JSON)),
         json.loads(get_file_data('result.json'))
     )
 ]
