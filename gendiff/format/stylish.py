@@ -6,6 +6,12 @@ def indent(depth):
 
 
 def to_str(value, depth):
+    if isinstance(value, bool):
+        return 'true' if value else 'false'
+
+    if value is None:
+        return 'null'
+
     if not isinstance(value, dict):
         return value
     result = f'\n{indent(depth + 3)}'.join([f'{k}: {to_str(v, depth + 2)}' for k, v in value.items()])
@@ -29,8 +35,8 @@ def render(diff_data, depth=1):
             store(' ', value)
         elif status == tree.CHANGED:
             old, new = value
-            store('+', new)
             store('-', old)
+            store('+', new)
         elif status == tree.REMOVED:
             store('-', value)
         elif status == tree.ADDED:
@@ -40,4 +46,4 @@ def render(diff_data, depth=1):
 
 
 def format(diff):
-    return f'{{\n{render(diff)}\n}}\n'
+    return f'{{\n{render(diff)}\n}}'
